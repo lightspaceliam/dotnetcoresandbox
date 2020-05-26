@@ -1,0 +1,12 @@
+# Ignore any .vs directorires and contents.
+
+.vs
+
+# Ignore all projects's bin and obj folders and contents.
+
+bin
+obj
+
+# Ignore all {Projects}.proj.user files.
+
+*.user
