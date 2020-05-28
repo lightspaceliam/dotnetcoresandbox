@@ -4,7 +4,7 @@ namespace Entities.Extensions
 {
     public static class MigrationExtensions
     {
-        public static void AddTemporalTableSupport(this MigrationBuilder builder, string tableName, string schema = "dbo", string historyTableSchemaPart = "History")
+        public static void AddSystemVersioningSupport(this MigrationBuilder builder, string tableName, string schema = "dbo", string historyTableSchemaPart = "History")
         {
             var createPrimarySchemaIfNotExists = $@"
                 IF NOT EXISTS ( SELECT  *
@@ -41,7 +41,7 @@ namespace Entities.Extensions
             builder.Sql(applySystemVersioningToTable);
         }
 
-        public static void RemoveTemporalTableSupportAndDropTables(this MigrationBuilder builder, string tableName, string schema = "PRO", string historyTableSchema = "History")
+        public static void RemoveSystemVersioningSupportAndDropTables(this MigrationBuilder builder, string tableName, string schema = "PRO", string historyTableSchema = "History")
         {
             var setSystemVersioningToOff = $@"
                 ALTER TABLE [{schema}].[{tableName}] 
