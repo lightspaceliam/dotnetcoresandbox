@@ -28,7 +28,7 @@ This project will run on Windows 10 or Mac OSX. The bare requirements include:
 5.	If .NET Core 3.1^ is installed, you will see a Unicorn
 6.	If not run command: dotnet tool install --global dotnet-ef
 7.	Then run: dotnet ef 
-8.	If you see the Unicorn proceed
+8.	If you see the Unicorn proceed, if not refer to references in /Entities/ReadMe.md
 9.	Run command: dotnet ef database update
 10.	View you newly created database: SandboxDbContext with two tables People & Products
 
