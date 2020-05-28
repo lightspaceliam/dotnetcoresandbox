@@ -11,12 +11,13 @@ namespace Entities
         public SandboxDbContext() { }
 
         public DbSet<Person> People { get; set; }
+        public DbSet<Product> Products { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=EFProviders.InMemory;Trusted_Connection=True;ConnectRetryCount=0");
+                optionsBuilder.UseSqlServer("Server=localhost;Database=SandboxDbContext;Integrated Security=True;MultipleActiveResultSets=True");
             }
         }
 
@@ -31,12 +32,21 @@ namespace Entities
             modelBuilder.Entity<Person>()
                 .HasIndex(e => e.LastName);
 
+            modelBuilder.Entity<Product>()
+                .HasIndex(e => e.Name);
+            modelBuilder.Entity<Product>()
+                .HasIndex(e => e.Code);
+
             #endregion
 
             #region Individual property constraints.
 
             modelBuilder.Entity<Person>()
                 .HasIndex(e => e.Email)
+                .IsUnique();
+
+            modelBuilder.Entity<Product>()
+                .HasIndex(e => e.Code)
                 .IsUnique();
 
             #endregion
