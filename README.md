@@ -8,5 +8,6 @@
 |	+-- Extensions
 |	    +-- MigrationExtensions.cs
 |	+-- Person.cs
+|	+-- Product.cs
 |	+-- SandboxDbContext.cs
 ```
