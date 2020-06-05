@@ -2,7 +2,7 @@
 
 ## Summary
 
-The purpose of the Entities project is to provide a basic example of implementing Code First. 
+The purpose of the Entities project is to provide a basic example of implementing the Code First pattern. 
 .NET provides us with an extremely rich API that allows us to do so much more.
 Both .NET Core & Full Framework - Code First, support singular and pluralization for database tables names. In this example I have selected to pluralizes my table names.
 
